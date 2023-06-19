@@ -9,3 +9,19 @@ datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
 }
+
+model Produto {
+  id        Int      @id @default(autoincrement())
+  nome      String
+  descricao String
+  cor       String?
+  marca     String?
+  estoque   Estoque?
+}
+
+model Estoque {
+  id         Int     @id @default(autoincrement())
+  produto    Produto @relation(fields: [idProduto], references: [id])
+  idProduto  Int     @unique
+  quantidade Int     @default(0)
+}

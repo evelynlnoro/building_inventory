@@ -49,4 +49,4 @@ Para entender melhor os conceitos de _database migrations_ do Prisma, [https://w
 
 ## Contribuições
 
-Projeto em desenvolvimento pelos alunos do curso de Engenharia da Computação, Évelyn Noro e Rafael Lawisch, com contribuição de Gabriel Rheinheimer.
+Projeto em desenvolvimento pelos alunos do curso de Engenharia da Computação, Évelyn Noro e Rafael Lawisch.

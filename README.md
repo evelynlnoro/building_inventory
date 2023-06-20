@@ -29,6 +29,16 @@ npm run dev # ou pnpm run dev
 
 Em seguida, navegue até [http://localhost:3000](http://localhost:3000) para utilizar o app.
 
+## Banco de dados
+
+O projeto vem com um banco de dados SQLite 3 instalado e configurado. Para verificar seu conteúdo, execute o comando:
+
+```bash
+npx prisma studio
+```
+
+Para entender melhor os conceitos de _database migrations_ do Prisma, [https://www.prisma.io/docs/concepts/components/prisma-migrate](consulte a documentação).
+
 ## Testes
 
 ~ Processo de testes será descrito aqui ~

@@ -43,9 +43,9 @@ Para entender melhor os conceitos de _database migrations_ do Prisma, [https://w
 
 ~ Processo de testes será descrito aqui ~
 
-## Bugs
+## Tarefas
 
-~ Processo de restreamento e solução de bugs será descrito aqui ~
+A organização das tarefas e o acompanhamento delas está sendo feito através da plataforma Trello. [https://trello.com/invite/b/XRvopNTP/ATTIbd4b6f9be70c9590f954042afb9dd3dfA7FF7A3C/buildinginventory] (Acesse o Trello aqui.)
 
 ## Contribuições
 

@@ -1,9 +1,5 @@
-import InventoryList from "@/app/components/InventoryList";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
-  return (
-    <>
-      <InventoryList />
-    </>
-  );
+  redirect("/materials");
 }

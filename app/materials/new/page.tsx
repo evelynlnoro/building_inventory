@@ -41,29 +41,36 @@ export default function Page() {
   return (
     <>
       <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl">Novo Produto</h1>
+        <h1 className="text-2xl">Cadastro de um Novo Produto</h1>
       </header>
       <form action={createItem} className="flex gap-2 flex-col">
+        <h3>Nome</h3>
         <input
           type="text"
           name="nome"
           className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
+          required
         />
+        <h3>Descrição</h3>
         <input
           type="text"
           name="descricao"
           className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
+          required
         />
+        <h3>Cor</h3>
         <input
           type="text"
           name="cor"
           className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
         />
+        <h3>Marca</h3>
         <input
           type="text"
           name="marca"
           className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
         />
+        <h3>Quantidade</h3>
         <input
           type="number"
           name="quantidade"
@@ -73,16 +80,16 @@ export default function Page() {
         />
         <div className="flex gap-1 justify-end">
           <Link
-            href=".."
+            href="javascript:history.back();"
             className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
           >
-            Cancel
+            Cancelar
           </Link>
           <button
             type="submit"
             className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
           >
-            Create
+            Criar
           </button>
         </div>
       </form>

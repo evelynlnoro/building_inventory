@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { UserButton } from "@clerk/nextjs";
 
 import logo from "@/public/logo.jpg";
 
@@ -20,7 +21,7 @@ export default function NavBar() {
               Inventário
             </span>
           </Link>
-          <div className="flex md:order-2">
+          <div className="flex gap-2 md:order-2">
             <Link
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               href="/materials/new"
@@ -35,7 +36,7 @@ export default function NavBar() {
               aria-controls="navbar-sticky"
               aria-expanded="false"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Menu</span>
               <svg
                 className="w-6 h-6"
                 aria-hidden="true"
@@ -50,6 +51,7 @@ export default function NavBar() {
                 ></path>
               </svg>
             </button>
+            <UserButton afterSignOutUrl="/" />
           </div>
           <div
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"

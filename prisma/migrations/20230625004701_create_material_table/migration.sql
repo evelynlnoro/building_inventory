@@ -1,5 +1,5 @@
 -- CreateTable
-CREATE TABLE "Produto" (
+CREATE TABLE "Material" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "nome" TEXT NOT NULL,
     "descricao" TEXT NOT NULL,

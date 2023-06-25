@@ -10,7 +10,7 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-model Produto {
+model Material {
   id         Int      @id @default(autoincrement())
   nome       String
   descricao  String

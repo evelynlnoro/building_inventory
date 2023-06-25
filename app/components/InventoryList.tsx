@@ -3,7 +3,7 @@ import { prisma } from "@/app/db";
 import { InventoryItem } from "@/app/components/InventoryItem";
 
 function getInventory() {
-  return prisma.produto.findMany();
+  return prisma.material.findMany();
 }
 
 export default async function InventoryList() {

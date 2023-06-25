@@ -16,12 +16,12 @@ async function createItem(data: FormData) {
   }
 
   const cor = data.get("cor")?.valueOf();
-  if (typeof cor !== "string" && typeof cor !== "undefined") {
+  if (typeof cor !== "string") {
     throw new Error("Cor inválida");
   }
 
   const marca = data.get("marca")?.valueOf();
-  if (typeof marca !== "string" && typeof marca !== "undefined") {
+  if (typeof marca !== "string") {
     throw new Error("Marca inválida");
   }
 
@@ -31,17 +31,17 @@ async function createItem(data: FormData) {
   }
 
   // creation
-  await prisma.produto.create({
+  await prisma.material.create({
     data: { nome, descricao, cor, marca, quantidade },
   });
   redirect("/");
 }
 
-export default function Page() {
+export default function NewMaterialPage() {
   return (
     <>
       <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl">Cadastro de um Novo Produto</h1>
+        <h1 className="text-2xl">Cadastro de material</h1>
       </header>
       <form action={createItem} className="flex gap-2 flex-col">
         <h3>Nome</h3>

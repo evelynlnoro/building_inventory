@@ -17,7 +17,11 @@ Assumindo que os comandos `git` e `npm` (ou `pnpm`) estejam disponíveis, abra u
 git clone https://github.com/evelynlnoro/building_inventory.git
 cd building_inventory
 npm install # ou pnpm install
+npx prisma migrate
+mv .env.example .env
 ```
+
+Em seguida, abra o arquivo `.env` com um editor de texto e preencha as [https://clerk.com/docs/nextjs/get-started-with-nextjs#set-environment-keys](variáveis necessárias para o provedor de autenticação Clerk).
 
 ## Utilização
 
@@ -45,7 +49,7 @@ Para entender melhor os conceitos de _database migrations_ do Prisma, [https://w
 
 ## Tarefas
 
-A organização das tarefas e o acompanhamento delas está sendo feito através da plataforma Trello. [https://trello.com/invite/b/XRvopNTP/ATTIbd4b6f9be70c9590f954042afb9dd3dfA7FF7A3C/buildinginventory] (Acesse o Trello aqui.)
+A organização e acompanhamento das tarefas é feito através [https://trello.com/invite/b/XRvopNTP/ATTIbd4b6f9be70c9590f954042afb9dd3dfA7FF7A3C/buildinginventory](deste quadro na plataforma Trello).
 
 ## Contribuições
 

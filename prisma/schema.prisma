@@ -14,8 +14,8 @@ model Produto {
   id         Int      @id @default(autoincrement())
   nome       String
   descricao  String
-  cor        String?
-  marca      String?
+  cor        String
+  marca      String
   quantidade Int
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt

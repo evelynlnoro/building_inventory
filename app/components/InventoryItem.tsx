@@ -4,8 +4,8 @@ type InventoryItemProps = {
   id: number;
   nome: string;
   descricao: string;
-  cor?: string;
-  marca?: string;
+  cor: string;
+  marca: string;
   quantidade: number;
 };
 

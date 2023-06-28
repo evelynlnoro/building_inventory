@@ -1,4 +1,4 @@
-import InventoryList from "@/app/components/InventoryList";
+import InventoryList from "@/app/materials/components/InventoryList";
 
 export default async function MaterialsPage() {
   return (

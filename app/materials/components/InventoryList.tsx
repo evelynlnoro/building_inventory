@@ -1,6 +1,6 @@
 import { prisma } from "@/app/db";
 
-import { InventoryItem } from "@/app/components/InventoryItem";
+import { InventoryItem } from "@/app/materials/components/InventoryItem";
 
 function getInventory() {
   return prisma.material.findMany();

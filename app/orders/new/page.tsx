@@ -31,7 +31,7 @@ async function createItem(data: FormData) {
   }
 
   // creation
-  await prisma.order.create({
+  await prisma.pedido.create({
     data: { nome, descricao, cor, marca, quantidade },
   });
   redirect("/");

@@ -3,7 +3,7 @@ import { prisma } from "@/app/db";
 import { OrderItem } from "@/app/orders/components/OrderItem";
 
 function getOrders() {
-  return prisma.solicitacao.findMany({ include: { material: true } });
+  return prisma.pedido.findMany({ include: { material: true } });
 }
 
 export default async function OrderList() {

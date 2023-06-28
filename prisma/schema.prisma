@@ -11,18 +11,18 @@ datasource db {
 }
 
 model Material {
-  id           Int           @id @default(autoincrement())
+  id           Int      @id @default(autoincrement())
   nome         String
   descricao    String
   cor          String
   marca        String
   quantidade   Int
-  solicitacoes Solicitacao[]
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
+  solicitacoes Pedido[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
-model Solicitacao {
+model Pedido {
   id          Int      @id @default(autoincrement())
   material    Material @relation(fields: [idMaterial], references: [id])
   idMaterial  Int

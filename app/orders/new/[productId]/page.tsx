@@ -51,12 +51,6 @@ export default async function NewOrderPage({
         <p>
           Solicitante: {user.firstName} {user.lastName}
         </p>
-        {/* <input
-          type="text"
-          name="nome"
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-          required
-        /> */}
         <h3>Material necessário:</h3>
         {/* <input
           type="text"

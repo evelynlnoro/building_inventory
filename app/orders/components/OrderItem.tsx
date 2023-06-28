@@ -11,7 +11,8 @@ type OrderItemProps = {
   };
   idUsuario: string;
   quantidade: number;
-  aprovadoEm: Date;
+  observacao: string;
+  aprovadoEm: Date | null;
   aprovadoPor: string;
 };
 
@@ -20,6 +21,7 @@ export function OrderItem({
   material,
   idUsuario,
   quantidade,
+  observacao,
   aprovadoEm,
   aprovadoPor,
 }: OrderItemProps) {

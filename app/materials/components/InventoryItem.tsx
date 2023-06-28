@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 type InventoryItemProps = {
   id: number;
   nome: string;
@@ -20,6 +22,7 @@ export function InventoryItem({
   return (
     <li className="flex gap-1 items-center">
       {nome}: {quantidade}
+      <Link href={`/orders/new/${id}`}>Solicitar</Link>
     </li>
   );
 }

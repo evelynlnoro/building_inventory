@@ -11,27 +11,28 @@ datasource db {
 }
 
 model Material {
-  id           Int      @id @default(autoincrement())
-  nome         String
-  descricao    String
-  cor          String
-  marca        String
-  quantidade   Int
-  solicitacoes Pedido[]
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  id         Int      @id @default(autoincrement())
+  nome       String
+  descricao  String
+  cor        String
+  marca      String
+  quantidade Int
+  pedidos    Pedido[]
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Pedido {
-  id          Int      @id @default(autoincrement())
-  material    Material @relation(fields: [idMaterial], references: [id])
+  id          Int       @id @default(autoincrement())
+  material    Material  @relation(fields: [idMaterial], references: [id])
   idMaterial  Int
   idUsuario   String
   quantidade  Int
-  aprovadoEm  DateTime
-  aprovadoPor String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  observacao  String
+  aprovadoEm  DateTime?
+  aprovadoPor String    @default("")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
 
   @@unique([idMaterial, idUsuario])
 }

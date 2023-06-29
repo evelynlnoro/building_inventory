@@ -52,8 +52,6 @@ export default async function NewOrderPage({
 
   return (
     <>
-      {/* <header className="flex justify-between items-center mb-4">
-      </header> */}
       <form action={createItem} className="flex gap-2 flex-col">
         <h1 className="text-2xl">Cadastro de solicitação</h1>
         <p>

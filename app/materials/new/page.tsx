@@ -40,47 +40,55 @@ async function createItem(data: FormData) {
 export default function NewMaterialPage() {
   return (
     <>
-      <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl">Cadastro de material</h1>
-      </header>
       <form action={createItem} className="flex gap-2 flex-col">
-        <h3>Nome</h3>
-        <input
-          type="text"
-          name="nome"
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-          required
-        />
-        <h3>Descrição</h3>
-        <input
-          type="text"
-          name="descricao"
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-          required
-        />
-        <h3>Cor</h3>
-        <input
-          type="text"
-          name="cor"
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <h3>Marca</h3>
-        <input
-          type="text"
-          name="marca"
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-        />
-        <h3>Quantidade</h3>
-        <input
-          type="number"
-          name="quantidade"
-          min={0}
-          defaultValue={0}
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-        />
+        <h1 className="text-2xl">Cadastro de material</h1>
+        <label>
+          Nome:
+          <input
+            type="text"
+            name="nome"
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
+            required
+          />
+        </label>
+        <label>
+          Descrição:
+          <input
+            type="text"
+            name="descricao"
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
+            required
+          />
+        </label>
+        <label>
+          Cor:
+          <input
+            type="text"
+            name="cor"
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
+          />
+        </label>
+        <label>
+          Marca:
+          <input
+            type="text"
+            name="marca"
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
+          />
+        </label>
+        <label>
+          Quantidade:
+          <input
+            type="number"
+            name="quantidade"
+            min={0}
+            defaultValue={0}
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
+          />
+        </label>
         <div className="flex gap-1 justify-end">
           <Link
-            href="javascript:history.back();"
+            href="/materials"
             className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
           >
             Cancelar

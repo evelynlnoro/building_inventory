@@ -8,7 +8,10 @@ async function createItem(data: FormData) {
 
   // validations
   const idMaterial = +(data.get("idMaterial")?.valueOf() || 0);
-  if (typeof idMaterial !== "number" || idMaterial < 1) {
+  if (
+    typeof idMaterial !== "number" ||
+    !prisma.material.findUnique({ where: { id: idMaterial } })
+  ) {
     throw new Error("Material inválido");
   }
 
@@ -37,27 +40,26 @@ async function createItem(data: FormData) {
 export default async function NewOrderPage({
   params,
 }: {
-  params: { productId: string };
+  params: { materialId: string };
 }) {
   const user = await currentUser();
   if (!user) return redirect("/sign-in");
 
+  const material = await prisma.material.findUnique({
+    where: { id: +params.materialId },
+  });
+  if (!material) throw new Error("Material inválido");
+
   return (
     <>
-      <header className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl">Cadastro de solicitação</h1>
-      </header>
+      {/* <header className="flex justify-between items-center mb-4">
+      </header> */}
       <form action={createItem} className="flex gap-2 flex-col">
+        <h1 className="text-2xl">Cadastro de solicitação</h1>
         <p>
           Solicitante: {user.firstName} {user.lastName}
         </p>
-        <h3>Material necessário:</h3>
-        {/* <input
-          type="text"
-          name="material"
-          className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
-          required
-        /> */}
+        <p>Material necessário: {material.nome}</p>
         <label>
           Quantidade:
           <input
@@ -65,7 +67,7 @@ export default async function NewOrderPage({
             type="number"
             min={0}
             defaultValue={0}
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
             required
           />
         </label>
@@ -74,19 +76,19 @@ export default async function NewOrderPage({
           <input
             type="text"
             name="observacao"
-            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100"
+            className="border border-slate-300 bg-transparent rounded px-2 py-1 outline-none focus-within:border-slate-100 ml-2"
           />
         </label>
         <input
           type="number"
           name="idMaterial"
-          value={params.productId}
+          value={params.materialId}
           hidden={true}
         />
         <input type="text" name="idUsuario" value={user.id} hidden={true} />
         <div className="flex gap-1 justify-end">
           <Link
-            href="javascript:history.back();"
+            href="/materials"
             className="border border-slate-300 text-slate-300 px-2 py-1 rounded hover:bg-slate-700 focus-within:bg-slate-700 outline-none"
           >
             Cancelar

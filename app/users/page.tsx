@@ -12,12 +12,31 @@ export default async function usersPage() {
     orderBy: "-created_at",
   });
 
+  async function changeUserRole(userId: string, desiredRole: string) {
+    "use server";
+
+    clerkClient.users.updateUser(userId, {
+      privateMetadata: {
+        role: desiredRole,
+      },
+    });
+  }
+
   return (
     <>
       <ul>
-        {users.map((user) => (
-          <UserItem key={user.id} user={user} />
-        ))}
+        {users.map((user) => {
+          const userRole = user?.privateMetadata["role"] as string;
+          return (
+            <UserItem
+              key={user.id}
+              userId={user.id}
+              userName={`${user.firstName} ${user.lastName}`}
+              userRole={userRole}
+              changeUserRole={changeUserRole}
+            />
+          );
+        })}
       </ul>
     </>
   );

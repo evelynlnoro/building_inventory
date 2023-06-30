@@ -1,13 +1,18 @@
 "use client";
 
-import type { User } from "@clerk/nextjs/dist/types/server";
-
 type UserItemProps = {
-  user: User;
+  userId: string;
+  userName: string;
+  userRole: string;
+  changeUserRole: any;
 };
 
-export default function UserItem({ user }: UserItemProps) {
-  const userRole = user?.privateMetadata["role"] as string;
+export default function UserItem({
+  userId,
+  userName,
+  userRole,
+  changeUserRole,
+}: UserItemProps) {
   const displayUserRole =
     userRole === "ADMIN"
       ? "Administrador"
@@ -15,9 +20,27 @@ export default function UserItem({ user }: UserItemProps) {
       ? "Aprovador"
       : "Usuário";
 
+  function makeApprover() {
+    changeUserRole(userId, "APPROVER");
+  }
+
+  function makeAdmin() {
+    changeUserRole(userId, "ADMIN");
+  }
+
   return (
     <li>
-      {user.firstName} {user.lastName} ({displayUserRole})
+      {userName} ({displayUserRole}){" "}
+      {displayUserRole === "Usuário" ? (
+        <button onClick={makeApprover}>Tornar Aprovador</button>
+      ) : (
+        ""
+      )}{" "}
+      {displayUserRole !== "Administrador" ? (
+        <button onClick={makeAdmin}>Tornar Administrador</button>
+      ) : (
+        ""
+      )}
     </li>
   );
 }

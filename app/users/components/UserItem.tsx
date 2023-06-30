@@ -4,7 +4,7 @@ type UserItemProps = {
   userId: string;
   userName: string;
   userRole: string;
-  changeUserRole: any;
+  changeUserRole: (userId: string, desiredRole: string) => void;
 };
 
 export default function UserItem({

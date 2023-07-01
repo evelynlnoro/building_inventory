@@ -8,6 +8,7 @@
 - React
 - PrismaORM
 - SQLite
+- PlayWright
 
 ## Instalação
 
@@ -45,7 +46,7 @@ Para entender melhor os conceitos de _database migrations_ do Prisma, [https://w
 
 ## Testes
 
-~ Processo de testes será descrito aqui ~
+O framework escolhido para os testes automatizados é o PlayWrite, [https://playwright.dev/docs/intro](consulte a documentação). E os testes existentes podem ser verificados na pasta "tests".
 
 ## Tarefas
 
